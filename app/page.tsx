@@ -123,30 +123,6 @@ export default function Home() {
                 </ul>
               </CardContent>
             </Card>
-            <Card className="rounded-2xl shadow-md hover:shadow-lg transition-shadow border-0 bg-card sm:col-span-2 lg:col-span-1">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 rounded-xl bg-accent/20 text-accent-foreground">
-                    <BarChart3 className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold">For Admins</h3>
-                </div>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>View comprehensive analytics</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>Monitor platform activity</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>Export data for reporting</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
