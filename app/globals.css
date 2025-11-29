@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+
+  /* 👇 Tell Tailwind about your semantic colors */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-destructive: hsl(var(--destructive));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+}
+
+:root {
+  /* Dental Blue - Primary color for actions and accents */
+  --primary: 200 90% 50%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Soft Teal/Mint - Secondary color for highlights and statuses */
+  --secondary: 170 60% 65%;
+  --secondary-foreground: 0 0% 15%;
+  
+  /* Accent - Soft teal variant */
+  --accent: 170 50% 70%;
+  --accent-foreground: 0 0% 15%;
+  
+  /* Neutral backgrounds - Very light gray/white */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 10%;
+  
+  /* Card backgrounds */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  
+  /* Muted colors */
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  
+  /* Borders and inputs */
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 200 90% 50%;
+  
+  /* Destructive */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+}
+
+.dark {
+  /* Dental Blue - Slightly adjusted for dark mode */
+  --primary: 200 85% 55%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Soft Teal/Mint - Adjusted for dark mode */
+  --secondary: 170 55% 50%;
+  --secondary-foreground: 0 0% 98%;
+  
+  /* Accent */
+  --accent: 170 45% 40%;
+  --accent-foreground: 0 0% 98%;
+  
+  /* Deep slate background */
+  --background: 220 15% 12%;
+  --foreground: 0 0% 98%;
+  
+  /* Card backgrounds */
+  --card: 220 15% 15%;
+  --card-foreground: 0 0% 98%;
+  
+  /* Muted colors */
+  --muted: 220 10% 20%;
+  --muted-foreground: 0 0% 65%;
+  
+  /* Borders and inputs */
+  --border: 220 10% 25%;
+  --input: 220 10% 25%;
+  --ring: 200 85% 55%;
+  
+  /* Destructive */
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 100%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  /* Improved typography hierarchy */
+  h1 {
+    @apply text-4xl font-bold tracking-tight lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  
+  h4 {
+    @apply text-xl font-semibold tracking-tight;
+  }
+  
+  /* Smooth transitions */
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  /* Input styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    @apply rounded-xl border border-input bg-background px-4 py-2.5 text-sm text-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+  
+  textarea {
+    @apply resize-y;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
